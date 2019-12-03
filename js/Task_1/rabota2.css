@@ -1,0 +1,26 @@
+button:not(.LastButton) {
+	border-radius: 10px;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding: 3px 3px 3px 24px; 
+}
+
+button:hover {
+	background-color: #E14FB5;
+}
+button.FormName {
+	background-image: url("images/icons8-барт-симпсон-50.png");
+}
+
+button.Accessory {
+	background-image: url("images/icons8-гомер-симпсон-50.png");
+}
+
+button.Reset {
+	background-image: url("images/icons8-лиза-симпсон-50.png");
+}
+
+button.Quantity {
+	background-image: url("images/icons8-мардж-симпсон-50.png");
+}

@@ -1,0 +1,32 @@
+div:not(#maindiv) {
+	float: left;
+	border: 2px solid #770033;
+}
+
+#maindiv {
+	overflow: hidden;
+	height: 50px;
+	margin-bottom: 30px;
+}
+
+button:not(#firstButton) {
+	display: block;
+	width: 100%;
+}
+
+input {
+	background-color: #66CC44;
+}
+
+table {
+	margin: 0 auto;
+}
+
+#mage {
+	height: 44px;
+}
+
+#deleteButton {
+	height: 44px;
+	background-color: red;
+}
