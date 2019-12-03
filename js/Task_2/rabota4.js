@@ -3,32 +3,38 @@ functionBlock.hidden = true;
 let tableBorder = document.createElement("div");
 let inputTableBorder = document.createElement("input");
 let selectTableBorder = document.createElement("select");
+
 let optionNone = document.createElement("option");
 optionNone.value = "none";
-optionNone.innerHTML = "None"
+optionNone.innerHTML = "Нет"
 selectTableBorder.appendChild(optionNone);
+
 let optionDotted = document.createElement("option");
 optionDotted.value = "dotted";
-optionDotted.innerHTML = "Dotted"
+optionDotted.innerHTML = "Точки"
 selectTableBorder.appendChild(optionDotted);
+
 let optionDashed = document.createElement("option");
 optionDashed.value = "dashed";
-optionDashed.innerHTML = "Dashed"
+optionDashed.innerHTML = "Тире"
 selectTableBorder.appendChild(optionDashed);
+
 let optionSolid = document.createElement("option");
 optionSolid.value = "solid";
-optionSolid.innerHTML = "Solid"
+optionSolid.innerHTML = "Сплошная"
 selectTableBorder.appendChild(optionSolid);
+
 let optionDouble = document.createElement("option");
 optionDouble.value = "double";
-optionDouble.innerHTML = "Double"
+optionDouble.innerHTML = "Двойная"
 selectTableBorder.appendChild(optionDouble);
+
 let buttonTableBorder = document.createElement("button");
 inputTableBorder.maxLength = 3;
 inputTableBorder.size = 16;
-buttonTableBorder.innerHTML = "Apply " + inputTableBorder.value + "px and border is " + selectTableBorder.value;
-inputTableBorder.oninput = () => buttonTableBorder.innerHTML = "Apply " + inputTableBorder.value + "px and border is " + selectTableBorder.value;
-selectTableBorder.onchange = () => buttonTableBorder.innerHTML = "Apply " + inputTableBorder.value + "px and border is " + selectTableBorder.value;
+buttonTableBorder.innerHTML = "Применить " + inputTableBorder.value + "px и рамка " + selectTableBorder.value;
+inputTableBorder.oninput = () => buttonTableBorder.innerHTML = "Применить " + inputTableBorder.value + "px и рамка " + selectTableBorder.value;
+selectTableBorder.onchange = () => buttonTableBorder.innerHTML = "Применить " + inputTableBorder.value + "px и рамка " + selectTableBorder.value;
 buttonTableBorder.onclick = () => createTable.tableBorder(inputTableBorder.value, selectTableBorder.options[selectTableBorder.selectedIndex].value);
 tableBorder.appendChild(inputTableBorder);
 tableBorder.appendChild(selectTableBorder);
@@ -38,7 +44,7 @@ functionBlock.appendChild(tableBorder);
 let addTableName = document.createElement("div");
 let inputAddTableName = document.createElement("input");
 let buttonAddTableName = document.createElement("button");
-buttonAddTableName.innerHTML = "Add table name";
+buttonAddTableName.innerHTML = "Добавить имя таблицы";
 buttonAddTableName.onclick = () => createTable.addTableName(inputAddTableName.value);
 addTableName.appendChild(inputAddTableName);
 addTableName.appendChild(buttonAddTableName);
@@ -47,7 +53,7 @@ functionBlock.appendChild(addTableName);
 let deleteRow = document.createElement("div");
 let inputDeleteRow = document.createElement("input");
 let buttonDeleteRow = document.createElement("button");
-buttonDeleteRow.innerHTML = "Delete row";
+buttonDeleteRow.innerHTML = "Удалить строку";
 buttonDeleteRow.onclick = () => createTable.deleteRow(inputDeleteRow.value);
 deleteRow.appendChild(inputDeleteRow);
 deleteRow.appendChild(buttonDeleteRow);
@@ -55,7 +61,7 @@ functionBlock.appendChild(deleteRow);
 
 let magic = document.createElement("div");
 let buttonMagic = document.createElement("button");
-buttonMagic.innerHTML = "Magic";
+buttonMagic.innerHTML = "Магия";
 buttonMagic.id = "mage";
 buttonMagic.onclick = () => 
 {
@@ -70,7 +76,7 @@ buttonMagic.onclick = () =>
 		let form = document.createElement("form")
   		let txtarea = document.createElement("textarea");
   		let but = document.createElement("button");
-  		but.innerHTML = "save";
+  		but.innerHTML = "Сохранить";
   		but.type = "button";
   		but.onclick = () => 
   		{
@@ -81,7 +87,8 @@ buttonMagic.onclick = () =>
   		cells[ind].appendChild(form);
   		form.appendChild(txtarea);
   		form.appendChild(but);
-	} else 
+	} 
+	else 
 	{
 		cells[ind].style.fontSize = font + "px";
 	}
@@ -91,11 +98,12 @@ functionBlock.appendChild(magic);
 
 let deleteTable = document.createElement("div");
 let buttonDeleteTable = document.createElement("button");
-buttonDeleteTable.innerHTML = "Delete";
+buttonDeleteTable.innerHTML = "Удалить";
 buttonDeleteTable.id = "deleteButton"
 buttonDeleteTable.onclick = () => createTable.deleteTable();
 deleteTable.appendChild(buttonDeleteTable);
 functionBlock.appendChild(deleteTable);
+
 function createTable(functionBlock) 
 {
 	functionBlock.hidden = false;

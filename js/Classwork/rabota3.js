@@ -1,5 +1,5 @@
-document.write("Random text")
-let x = "<h3>title</h3>";
+document.write("Текстик")
+let x = "<h3>Заголовок</h3>";
 document.write(x);
 let count = 0;
 links = document.getElementsByTagName("a");
@@ -10,7 +10,7 @@ for (i = 0; i < links.length; i++)
 		count++;
 	} 
 }
-document.write("Anchors = ", count, "</br>");
+document.write("Якорей = ", count, "</br>");
 for (i = 0; i < links.length; i++) 
 {
 	if (links[i].getAttribute('href')[0] == "#") 
@@ -19,40 +19,49 @@ for (i = 0; i < links.length; i++)
 		break;
 	} 
 }
+
 forms = document.getElementsByTagName("form");
-document.write("Forms = ", forms.length, "</br>");
+document.write("Форм = ", forms.length, "</br>");
 document.write(forms[0].getAttribute('name'), "</br>");
+
 images = document.getElementsByTagName("img");
-document.write("Images = ", images.length, "</br>");
+document.write("Изображений = ", images.length, "</br>");
 document.write(images[0].getAttribute('id'), "</br>");
-document.write("Links = ", links.length, "</br>");
+
+document.write("Ссылок = ", links.length, "</br>");
 document.write(links[0].getAttribute('id'), "</br>");
+
 document.write(document.location.host, "</br>");
 document.write(document.location.href, "</br>");
-document.write("Title = ", document.title, "</br>");
+
+document.write("Заголовок ", document.title, "</br>");
+
 document.write(document.location.href, "</br>");
+
 let button = document.getElementById("Button");
 function ButtonDisable() 
 {
 	button.disabled = true;
 }
-document.write("Button name = ", button.getAttribute('name'), "</br>");
-document.write("Button type = ", button.getAttribute('type'), "</br>");
-document.write("Button text = ", button.getAttribute('value'), "</br>");
-document.write("Form with button id = ", button.parentNode.getAttribute('id'), "</br>");
-let form = document.getElementById("FormWithButton");
+document.write("Имя кнопки = ", button.getAttribute('name'), "</br>");
+document.write("Тип кнопки = ", button.getAttribute('type'), "</br>");
+document.write("Текст кнопки = ", button.getAttribute('value'), "</br>");
+document.write("id формы с кнопкой = ", button.parentNode.getAttribute('id'), "</br>");
+
+let form = document.getElementById("Форма с кнопкой");
 for (i = 0; i < form.elements.length; i++) 
 {
-	document.write("Element ", i, " value = ", form.elements[i].getAttribute('value'), "</br>");
+	document.write("Элемент ", i, " value = ", form.elements[i].getAttribute('value'), "</br>");
 }
-document.write("Form action = ", document.getElementById("FormWithButton").getAttribute('action'), "</br>");
-document.write("Form enctype = ", document.getElementById("FormWithButton").getAttribute('enctype'), "</br>");
-document.write("Form elements = ", form.elements.length, "</br>");
-document.write("Form method = ", form.getAttribute('method'), "</br>");
-document.write("Form name = ", form.getAttribute('name'), "</br>");
+document.write("Action формы = ", document.getElementById("Форма с кнопкой").getAttribute('action'), "</br>");
+document.write("Enctype формы = ", document.getElementById("Форма с кнопкой").getAttribute('enctype'), "</br>");
+document.write("Элементов формы = ", form.elements.length, "</br>");
+document.write("Метод отправки с формы = ", form.getAttribute('method'), "</br>");
+document.write("Имя формы = ", form.getAttribute('name'), "</br>");
+
 function FormReset () 
 {
-	document.getElementById("FormWithButton").reset();
+	document.getElementById("Форма с кнопкой").reset();
 }
 for (i = 0; i < images.length; i++) 
 {
@@ -60,29 +69,30 @@ for (i = 0; i < images.length; i++)
 }
 for (i = 0; i < images.length; i++) 
 {
-	images[i].setAttribute("alt", "This is image");
+	images[i].setAttribute("alt", "Это изображение");
 	document.write(images[i].getAttribute("alt"), "</br>");
 }
 for (i = 0; i < images.length; i++) 
 {
-	images[i].style.border = "2px dashed blue";
+	images[i].style.border = "2px solid blue";
 }
 for (i = 0; i < images.length; i++) 
 {
-	images[i].setAttribute("width", "240px");
+	images[i].setAttribute("width", "200px");
 	images[i].setAttribute("height", "200px");
 }
 for (i = 0; i < images.length; i++) 
 {
 	document.write(images[i].getAttribute("name"), "</br>");
 }
-images[0].setAttribute("src", "http://i65.fastpic.ru/big/2014/0807/82/2dc28d0501d7038a5acbb6f645a11782.jpg")
+
+images[0].setAttribute("src", "https://vignette.wikia.nocookie.net/elderscrolls/images/3/38/%D0%A1%D0%BB%D0%B0%D0%B4%D0%BA%D0%BE%D0%B3%D0%BE%D0%BB%D0%BE%D1%81%D0%B0%D1%8F_%D0%A5%D0%B0%D0%B1%D0%B0%D1%81%D0%B8.jpg/revision/latest?cb=20190625114540&path-prefix=ru")
 function textEvent() 
 {
 	if (event.which == 1)
-      document.write("Left button");
+      document.write("Левая кнопка мыши");
     else if (event.which == 3)
-      document.write("Right button");
+      document.write("Правая кнопка мыши");
   	document.write("</br>Координаты курсора относительно страницы:</br>X = ", event.pageX, "</br>Y = ", event.pageY);
   	document.write("</br>Координаты курсора относительно окна:</br>X = ", event.clientX, "</br>Y = ", event.clientY);
   	document.write("</br>", event.target.tagName);
@@ -90,13 +100,14 @@ function textEvent()
 }
 document.addEventListener("click", textEvent);
 document.addEventListener("contextmenu", textEvent);
+
 table = document.getElementById("table");
 table.border = 3;
 table.setAttribute("cellpadding", "4");
 table.setAttribute("cellspacing", "4");
-table.style.border = "3px solid red";
+table.style.border = "2px dotted blue";
 table.appendChild(document.createElement("caption"));
-table.caption.innerHTML = "Table";
+table.caption.innerHTML = "Таблица";
 table.deleteRow(1);
 let tr = document.createElement("tr");
 table.appendChild(tr);
@@ -111,5 +122,5 @@ for (i = 0; i < tr.children.length; i++)
 }
 table.children[2].children[1].setAttribute("align", "right");
 table.children[2].children[2].setAttribute("vertical-align", "left");
-table.children[2].children[2].innerHTML = "Cell";
+table.children[2].children[2].innerHTML = "Ячейка";
 tr.children[0].setAttribute("colspan", "3");

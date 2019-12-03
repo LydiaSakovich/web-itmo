@@ -37,32 +37,45 @@ document.write('Название документа: ', document.title,'<br>');
 forms = document.getElementsByTagName("form");
 
 document.write("Четные формы = ");
-for (i = 0; i < forms.length; i++) {
-	if (((i + 1) % 2) == 0) {
+for (i = 0; i < forms.length; i++) 
+{
+	if (((i + 1) % 2) == 0) 
+	{
 		document.write(forms[i].getAttribute('name'), ", ");
 	}
 }
 
-function onClickButton(j) {
-	for (i = 0; i < forms[j].childNodes.length; i++) {
-		if ((forms[j].childNodes[i].tagName == "BUTTON") && (forms[j].childNodes[i].innerHTML == "Показать имя формы")) {
+function onClickButton(j) 
+{
+	for (i = 0; i < forms[j].childNodes.length; i++) 
+	{
+		if ((forms[j].childNodes[i].tagName == "BUTTON") && (forms[j].childNodes[i].innerHTML == "Показать имя формы")) 
+		{
 			alert(forms[j].childNodes[i].innerHTML);
 			break;
 		}
 	}
 	return false;
 }
-function formID (j) {
+
+function formID (j) 
+{
 	alert (forms[j].getAttribute('id')); 
 	return false;
 }
-function reset (j) {
+
+function reset (j) 
+{
 	forms[j].reset();
 }
-function quantityInputs(j) {
+
+function quantityInputs(j) 
+{
 	let qInputs = 0;
-	for (i = 0; i < forms[j].childNodes.length; i++) {
-		if (forms[j].childNodes[i].tagName == "INPUT") {
+	for (i = 0; i < forms[j].childNodes.length; i++) 
+	{
+		if (forms[j].childNodes[i].tagName == "INPUT") 
+		{
 			qInputs++;
 		}
 	}
@@ -72,24 +85,31 @@ function quantityInputs(j) {
 
 let links = document.getElementsByTagName("a");
 
-function tableCreate() {
+function tableCreate() 
+{
 	let tbl = document.createElement("table");
   	tbl.border = 1;
 	let lastLinks = [];
-	for (i = 0; i < links.length; i++) {
-		if (links[i].getAttribute('class') == "LastTask") {
+	for (i = 0; i < links.length; i++) 
+	{
+		if (links[i].getAttribute('class') == "LastTask") 
+		{
 			lastLinks.push(links[i]);
 		}
 	}
 	let set = new Set();
-	for (i = 0; i < lastLinks.length; i++) {
+	for (i = 0; i < lastLinks.length; i++) 
+	{
 		set.add(lastLinks[i].innerHTML);
 	}
-	for (let item of set) {
+	for (let item of set) 
+	{
 		let tr = tbl.insertRow(item.number);
-		for (j = 0; j < 3; j++) {
+		for (j = 0; j < 3; j++) 
+		{
 			let td = tr.insertCell(j);
-			switch(j) {
+			switch(j) 
+			{
 				case 0:
 				td.innerHTML = String(item);
 				break;
@@ -104,18 +124,24 @@ function tableCreate() {
 	}
 	document.body.appendChild(tbl);
 }
-function quantity(number, item, lastLinks) {
+function quantity(number, item, lastLinks)
+ {
 	let arr = [];
 	let count = 0;
-	for (i = 0; i < lastLinks.length; i++) {
-		if (lastLinks[i].innerHTML == item) {
+	for (i = 0; i < lastLinks.length; i++) 
+	{
+		if (lastLinks[i].innerHTML == item) 
+		{
 			count++;
 			arr.push(lastLinks[i].getAttribute('href'));
 		}
 	}
-	if (number == 1) {
+	if (number == 1) 
+	{
 		return count;
-	} else {
+	}
+	else 
+	{
 		return arr;
 	}
 	

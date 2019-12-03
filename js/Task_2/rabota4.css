@@ -1,32 +1,39 @@
-div:not(#maindiv) {
+div:not(#maindiv) 
+{
 	float: left;
-	border: 2px solid #770033;
+	border: 2px solid #415DD6;
 }
 
-#maindiv {
+#maindiv 
+{
 	overflow: hidden;
-	height: 50px;
-	margin-bottom: 30px;
+	height: 100px;
+	margin-bottom: 100px;
 }
 
-button:not(#firstButton) {
+button:not(#firstButton) 
+{
 	display: block;
 	width: 100%;
 }
 
-input {
-	background-color: #66CC44;
+input 
+{
+	background-color: #47B1CC;
 }
 
-table {
+table 
+{
 	margin: 0 auto;
 }
 
-#mage {
+#mage 
+{
 	height: 44px;
 }
 
-#deleteButton {
+#deleteButton 
+{
 	height: 44px;
-	background-color: red;
+	background-color: #D61942;
 }
