@@ -9,29 +9,28 @@ margin: 0;
 padding: 0;
 }
 
-header
+#site-header
 {
 background: #1D9CE1;
-height: 100px;
+height: 80px;
 width: 100%;
-position: relative;
+position: absolute;
 }
-
-.menu
+.header
 {
 list-style: none;
 position: absolute;
 top: 35px;
 left: 27%;
 }
-.menu a
+.header a
 {
 text-decoration: none;
+color: black;
 font-family: Calibri;
 font-size: 20px;
 margin: 0 50px;
 }
-
 #link1:hover, #link2:hover, #link3:hover 
 {
 border-radius: 5px;
@@ -39,111 +38,52 @@ background: #A6D3EA;
 color: #FFFFE0;
 }
 
-#footer 
-{
-background: #1D9CE1;
-position: relative;
-bottom: 0;
-width: 100%;
-height: 100px;
-}
-
-#block
-{
-position: relative;
-width: 100%;
-height: 750px;
-}
-
-#photo 
+#menu
 {
 position: absolute;
-border: #A6D3EA solid 2px;
-border-radius: 40px;
-width: 20%;
-height: 300px;
-top: 400px;
-right: 5%;
-}
-#block p
-{
-position: absolute;
-bottom: -20px;
-left:36%;
-}
-#frog
-{
-position: absolute;
-width:100%;
-height:300px;
-border-radius: 40px;
-}
-
-#navi
-{
-position: absolute;
-top: 30px;
+top: 100px;
 left: 5%;
 }
-#navi a 
+#menu a 
 {
 text-decoration: none;
 }
-
-#navi nav 
-{
-font-family: Arial;
-}
-
-#navi ul 
+#menu ul 
 {
 background: #1D9CE1;
 border-radius: 30px;
+font-family: Arial;
 }
-
-#navi li 
+#menu li 
 {
 border-radius: 30px;
-color: #A6D3EA;
 display: block;
 padding: 20px;
-position: relative;
-text-decoration: none;
 transition-duration: 1.0s;
 }
-
-#navi li a 
+#menu li a 
 {
 color: black;
 }
-
-#navi li:hover 
+#menu li:hover 
 {
 background: #A6D3EA;
 cursor: pointer;
 }
-
-#navi ul li ul 
+#menu ul li ul 
 {
 background: #1D9CE1;
 visibility: hidden;
 opacity: 0;
 position: absolute;
 margin-top: 20px;
-transition: all 0.5s ease;
+transition: 1.0s;
 }
-
-#navi ul li:hover > ul, ul li ul:hover 
+#menu ul li:hover > ul 
 {
 visibility: visible;
 opacity: 1;
 display: block;
-}
-
-#navi ul li ul li 
-{
-width: 80%;
-transition-duration: 0s;
 }
 
 #content
@@ -153,7 +93,42 @@ border: #A6D3EA solid 2px;
 border-radius: 35px;
 background: #1D9CE1;
 position: absolute;
-bottom: 15%;
+bottom: 30%;
+left: 20%;
 text-align: center;
-left: 18%;
+font-family: Cambria;
+}
+
+#block 
+{
+width: 15%;
+height: 225px;
+border: #A6D3EA solid 2px;
+border-radius: 40px;
+position: absolute;
+top: 355px;
+right: 7%;
+}
+#block p
+{
+position: absolute;
+bottom: -30px;
+left:25%;
+font-family: Cambria;
+}
+#photo
+{
+position: absolute;
+width:100%;
+height:100%;
+border-radius: 40px;
+}
+
+#footer 
+{
+background: #1D9CE1;
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 80px;
 }
