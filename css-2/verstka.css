@@ -12,6 +12,7 @@ padding: 0;
 #site-header
 {
 background: #1D9CE1;
+top: 0px;
 height: 80px;
 width: 100%;
 position: absolute;
@@ -20,7 +21,7 @@ position: absolute;
 {
 list-style: none;
 position: absolute;
-top: 35px;
+top: 25px;
 left: 27%;
 }
 .header a
@@ -59,7 +60,6 @@ font-family: Arial;
 border-radius: 30px;
 display: block;
 padding: 20px;
-transition-duration: 1.0s;
 }
 #menu li a 
 {
@@ -69,6 +69,7 @@ color: black;
 {
 background: #A6D3EA;
 cursor: pointer;
+transition-duration: 1.0s;
 }
 #menu ul li ul 
 {
