@@ -1,13 +1,13 @@
 div.forfunc {
-		display: inline-block;
-		min-width: 150px;
-		min-height: 150px;
-		border: 1px solid red;
-	        vertical-align: top;
+	display: inline-block;
+	min-width: 150px;
+	min-height: 150px;
+	border: 1px solid red;
+	vertical-align: top;
 }
 
 input,
 select,
 button {
-display: block;
+	display: block;
 }
