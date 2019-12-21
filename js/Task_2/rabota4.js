@@ -1,174 +1,99 @@
-let functionBlock = document.getElementById("maindiv");
-functionBlock.hidden = true;
-let tableBorder = document.createElement("div");
-let inputTableBorder = document.createElement("input");
-let selectTableBorder = document.createElement("select");
-
-let optionNone = document.createElement("option");
-optionNone.value = "none";
-optionNone.innerHTML = "Нет"
-selectTableBorder.appendChild(optionNone);
-
-let optionDotted = document.createElement("option");
-optionDotted.value = "dotted";
-optionDotted.innerHTML = "Точки"
-selectTableBorder.appendChild(optionDotted);
-
-let optionDashed = document.createElement("option");
-optionDashed.value = "dashed";
-optionDashed.innerHTML = "Тире"
-selectTableBorder.appendChild(optionDashed);
-
-let optionSolid = document.createElement("option");
-optionSolid.value = "solid";
-optionSolid.innerHTML = "Сплошная"
-selectTableBorder.appendChild(optionSolid);
-
-let optionDouble = document.createElement("option");
-optionDouble.value = "double";
-optionDouble.innerHTML = "Двойная"
-selectTableBorder.appendChild(optionDouble);
-
-let buttonTableBorder = document.createElement("button");
-inputTableBorder.maxLength = 3;
-inputTableBorder.size = 16;
-buttonTableBorder.innerHTML = "Применить " + inputTableBorder.value + "px и рамка " + selectTableBorder.value;
-inputTableBorder.oninput = () => buttonTableBorder.innerHTML = "Применить " + inputTableBorder.value + "px и рамка " + selectTableBorder.value;
-selectTableBorder.onchange = () => buttonTableBorder.innerHTML = "Применить " + inputTableBorder.value + "px и рамка " + selectTableBorder.value;
-buttonTableBorder.onclick = () => createTable.tableBorder(inputTableBorder.value, selectTableBorder.options[selectTableBorder.selectedIndex].value);
-tableBorder.appendChild(inputTableBorder);
-tableBorder.appendChild(selectTableBorder);
-tableBorder.appendChild(buttonTableBorder);
-functionBlock.appendChild(tableBorder);
-
-let addTableName = document.createElement("div");
-let inputAddTableName = document.createElement("input");
-let buttonAddTableName = document.createElement("button");
-buttonAddTableName.innerHTML = "Добавить имя таблицы";
-buttonAddTableName.onclick = () => createTable.addTableName(inputAddTableName.value);
-addTableName.appendChild(inputAddTableName);
-addTableName.appendChild(buttonAddTableName);
-functionBlock.appendChild(addTableName);
-
-let deleteRow = document.createElement("div");
-let inputDeleteRow = document.createElement("input");
-let buttonDeleteRow = document.createElement("button");
-buttonDeleteRow.innerHTML = "Удалить строку";
-buttonDeleteRow.onclick = () => createTable.deleteRow(inputDeleteRow.value);
-deleteRow.appendChild(inputDeleteRow);
-deleteRow.appendChild(buttonDeleteRow);
-functionBlock.appendChild(deleteRow);
-
-let magic = document.createElement("div");
-let buttonMagic = document.createElement("button");
-buttonMagic.innerHTML = "Магия";
-buttonMagic.id = "mage";
-buttonMagic.onclick = () => 
-{
-	cells = document.getElementsByTagName("td");
-	ind = Math.floor(Math.random() * cells.length);
-	cells[ind].style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")"; 
-	cells[ind].style.color = "rgb(" + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")"; 
-	let font = Math.floor(Math.random() * 13 + 15);
-	if (font > 25) 
-	{
-		cells[ind].innerHTML = null;
-		let form = document.createElement("form")
-  		let txtarea = document.createElement("textarea");
-  		let but = document.createElement("button");
-  		but.innerHTML = "Сохранить";
-  		but.type = "button";
-  		but.onclick = () => 
-  		{
-  			let txtval = txtarea.value;
-  			form.hidden = true;
-  			cells[ind].innerHTML = txtval;
-  		}
-  		cells[ind].appendChild(form);
-  		form.appendChild(txtarea);
-  		form.appendChild(but);
-	} 
-	else 
-	{
-		cells[ind].style.fontSize = font + "px";
-	}
-}
-magic.appendChild(buttonMagic);
-functionBlock.appendChild(magic);
-
-let deleteTable = document.createElement("div");
-let buttonDeleteTable = document.createElement("button");
-buttonDeleteTable.innerHTML = "Удалить";
-buttonDeleteTable.id = "deleteButton"
-buttonDeleteTable.onclick = () => createTable.deleteTable();
-deleteTable.appendChild(buttonDeleteTable);
-functionBlock.appendChild(deleteTable);
-
-function createTable(functionBlock) 
-{
-	functionBlock.hidden = false;
-
-	function tableBorder(inp, sel) 
-	{
-		tbl.style.border = inp + "px " + sel + " black";
-	}
-	createTable.tableBorder = tableBorder;
-
-	function addTableName(inp) 
-	{
-		tableName.innerHTML = inp;
-	}
-	createTable.addTableName = addTableName;
-
-	function deleteRow(inp) 
-	{
-		if ((!Number.isInteger(+inp)) || (+inp>tbl.rows.length) || (+inp<=0)) 
-		{
-			alert("You enter incorrect value");
+	function next() {
+			document.write('<br>-----<br>');;
 		}
-		else 
-		{
-			tbl.deleteRow(inp - 1);
+		//функция рандомизации чисел из инета
+		function randomInt(min, max) {
+			let rand = min - 0.5 + Math.random() * (max - min + 1);
+			return Math.round(rand);
 		}
-	}
-	createTable.deleteRow = deleteRow;
+		//функция рандомизации цвета из инета
+		function randColor() {
+			var r = Math.floor(Math.random() * (256)),
+				g = Math.floor(Math.random() * (256)),
+				b = Math.floor(Math.random() * (256));
+			return '#' + r.toString(16) + g.toString(16) + b.toString(16);
+		}
+		var x, y; //значения кол-ва строк и столбцов
 
-	function deleteTable() 
-	{
-		tbl.remove();
-		functionBlock.hidden = true;
-		document.getElementById("MainForm").hidden = false;
-	}
-	createTable.deleteTable = deleteTable;
-
-	tableWidth = document.getElementById("width").value;
-	tableHeight = document.getElementById("height").value;
-	document.getElementById("MainForm").hidden = true;
-	let tbl = document.createElement("table");
-  	tbl.border = 1;
-  	for (i = 0; i < tableHeight; i++) 
-  	{
-  		let tr = tbl.insertRow(i);
-  		for (j = 0; j < tableWidth; j++) 
-  		{
-  			let td = tr.insertCell(j);
-  			let form = document.createElement("form")
-  			let txtarea = document.createElement("textarea");
-  			let but = document.createElement("button");
-  			but.innerHTML = "save";
-  			but.type = "button";
-  			but.onclick = () => 
-  			{
-  				let txtval = txtarea.value;
-  				form.hidden = true;
-  				td.innerHTML = txtval;
-  			}
-  			td.appendChild(form);
-  			form.appendChild(txtarea);
-  			form.appendChild(but);
-  		}
-  	}
-  	let tableName = document.createElement("caption");
-	tbl.appendChild(tableName);
-  	document.body.appendChild(tbl);
-}
+		function newText() {
+			text = event.currentTarget.previousSibling.value;
+			event.currentTarget.parentNode.innerHTML = text;
+		}
+		//создание таблицы
+		function upload() {
+			x = document.getElementById("rows").value;
+			y = document.getElementById("cols").value;
+			var row = x;
+			var column = y;
+			var table = '<table border="1">';
+			for (var i = 0; i < row; i++) {
+				table += '<tr>';
+				for (var j = 0; j < column; j++) {
+					table +=
+						'<td><textarea placeholder="Введи текст!"></textarea><button type="button" onclick="newText()">Save</button></td>'
+				}
+				table += '</tr>';
+			}
+			table += '</table>';
+			document.getElementById('table').innerHTML = table;
+			//
+			document.getElementById('forma').style.display = 'none'; //скрываем форму
+			document.getElementById('func').style.display = ''; //делаем видимым блок функций
+		}
+		//границы таблицы
+		function func1() {
+			width = document.getElementById("tableSize").value;
+			if (width >= 1000) {
+				alert('Введите не более 3-х символов!');
+			} else {
+				document.getElementById("table").firstChild.width = width;
+				border = document.getElementById("borderType").value;
+				document.getElementById("table").firstChild.style.border = border;
+			}
+		}
+		//отображение значений на кнопке
+		document.getElementById("tableSize").oninput = function () {
+			document.getElementById("but1").textContent = 'Применить: ' + document.getElementById("tableSize").value +
+				'px';
+		}
+		document.getElementById("borderType").oninput = function () {
+			document.getElementById("but1").textContent = document.getElementById("but1").textContent + ', border: ' +
+				document.getElementById("borderType").value;
+		}
+		//добавление заголовка
+		function func2() {
+			caption = document.getElementById("captionText").value;
+			document.getElementById('table').firstChild.createCaption().innerHTML = caption;
+		}
+		//удаление строки
+		function func3() {
+			deleterow = document.getElementById("deleteRow").value;
+			document.getElementById('table').firstChild.deleteRow(deleterow - 1);
+		}
+		//рандомная ячейка и действия с ней
+		function func4() {
+			ind1 = randomInt(0, document.getElementById('table').firstChild.rows.length - 1);
+			ind2 = randomInt(0, document.getElementById('table').firstChild.rows[ind1].cells.length - 1);
+			switch (randomInt(1, 4)) {
+				case 1:
+					document.getElementById('table').firstChild.rows[ind1].cells[ind2].style.backgroundColor = randColor();
+					break;
+				case 2:
+					document.getElementById('table').firstChild.rows[ind1].cells[ind2].style.color = randColor();
+					break;
+				case 3:
+					document.getElementById('table').firstChild.rows[ind1].cells[ind2].style.fontSize = randomInt(15, 25) +
+						'pt';
+					break;
+				case 4:
+					document.getElementById('table').firstChild.rows[ind1].cells[ind2].innerHTML =
+						'<td><textarea placeholder="Введи текст!"></textarea><button type="button" onclick="newText()">Save</button></td>';
+					break;
+			}
+		}
+		//удаление таблицы
+		function func5() {
+			document.getElementById('table').firstChild.remove();
+			document.getElementById('forma').style.display = '';
+			document.getElementById('func').style.display = 'none';
+		}

@@ -1,39 +1,13 @@
-div:not(#maindiv) 
-{
-	float: left;
-	border: 2px solid #415DD6;
-}
+	div.forfunc {
+			display: inline-block;
+			min-width: 150px;
+			min-height: 150px;
+			border: 1px solid red;
+			vertical-align: top;
+		}
 
-#maindiv 
-{
-	overflow: hidden;
-	height: 100px;
-	margin-bottom: 100px;
-}
-
-button:not(#firstButton) 
-{
-	display: block;
-	width: 100%;
-}
-
-input 
-{
-	background-color: #47B1CC;
-}
-
-table 
-{
-	margin: 0 auto;
-}
-
-#mage 
-{
-	height: 44px;
-}
-
-#deleteButton 
-{
-	height: 44px;
-	background-color: #D61942;
-}
+		input,
+		select,
+		button {
+			display: block;
+		}

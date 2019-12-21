@@ -5,14 +5,46 @@
 <link rel="stylesheet" type="text/css" href="rabota4.css">
 </head>
 <body>
-	<div id="maindiv"></div>
-	<form id="MainForm">
-	<p>Введите ширину</p>
-	<input type="text" name="width" id="width">
-	<p>Введите высоту</p>
-	<input type="text" name="height" id="height"></br>
-	<button type="button" onclick="createTable(getElementById('maindiv'))" id="firstButton">Создать таблицу</button>
-	</form>
+	<div id='forma'>
+		<form>
+			<input id="rows" type="text" placeholder='Строки:'>
+			<input id="cols" type="text" placeholder='Столбцы:'>
+			<input type="button" value="Создать таблицу!" onclick='upload()'>
+		</form>
+	</div>
+	<div id="func" style="display:none">
+		<div class="forfunc">
+			<input id="tableSize" type="text" placeholder="Ширина таблицы:">
+
+			<select id="borderType">
+				<option value="">Тип рамки:</option>
+				<option value="dotted">dotted</option>
+				<option value="dashed">dashed</option>
+				<option value="solid">solid</option>
+				<option value="double">double</option>
+				<option value="groove">groove</option>
+			</select>
+
+			<button id="but1" onclick="func1()">Изменить границы таблицы</button>
+		</div>
+		<div class="forfunc">
+			<input id="captionText" type="text" placeholder="Заголовок таблицы:">
+
+			<button id="but2" onclick="func2()">Добавить заголовок</button>
+		</div>
+		<div class="forfunc">
+			<input id="deleteRow" type="number" placeholder="Номер строки:">
+
+			<button id="but3" onclick="func3()">Удалить строку</button>
+		</div>
+		<div class="forfunc">
+			<button id="but4" onclick="func4()">Случайный выбор</button>
+		</div>
+		<div class="forfunc">
+			<button id="but5" onclick="func5()">Удалить</button>
+		</div>
+	</div>
+	<div id="table"></div>
 	<script type="text/javascript" src="rabota4.js"></script>
 </body>
 </html>

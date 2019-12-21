@@ -10,7 +10,7 @@ document.write("Расширение: ", document.location.pathname.split('.')[1
 
 let strGET = document.location.search.replace( '?', '');
 document.write("Подстрока параметров: ", strGET,"</br>");
-
+//2
 let abc = "Anchor +1";
 document.write("Новый анкор 1: ", abc.anchor('ban'), '<br>');
 document.write("Новый анкор 2: ", abc.anchor('ban2'), '<br>');
@@ -20,12 +20,12 @@ document.write('<a href="https://lingust.ru/chinese/chinese-lessons/lesson1">У�
 document.getElementsByTagName("a")[0].id = "link1";
 document.getElementsByTagName("a")[1].id = "link2";
 
-document.write('<img src="https://vignette.wikia.nocookie.net/elderscrolls/images/c/c2/%D0%A8%D0%BE%D1%82%D0%B5%D1%80%D1%80%D0%B0.jpg/revision/latest?cb=20191104230229&path-prefix=ru" style="width: 20%" id="new">')
-document.write('<img src="https://vignette.wikia.nocookie.net/elderscrolls/images/5/55/%D0%90%D0%BD%D0%B0%D1%81%D1%81%D0%B8.jpg/revision/latest?cb=20190404151913&path-prefix=ru" style="width: 30%; height: 250px" id="new2"><br>')
+document.write('<img src="https://vignette.wikia.nocookie.net/elderscrolls/images/c/c2/%D0%A8%D0%BE%D1%82%D0%B5%D1%80%D1%80%D0%B0.jpg/revision/latest?cb=20191104230229&path-prefix=ru" style="width: 20%">')
+document.write('<img src="https://vignette.wikia.nocookie.net/elderscrolls/images/5/55/%D0%90%D0%BD%D0%B0%D1%81%D1%81%D0%B8.jpg/revision/latest?cb=20190404151913&path-prefix=ru" style="width: 30%; height: 250px"><br>')
 
 document.write('Кол-во анкоров: ', document.anchors.length,'<br>');
 document.write('Кол-во ссылок: ', document.links.length,'<br>');
-document.write('Вывод имеющегося анкора: ', document.anchors[0].innerHTML, '<br>')
+document.write('Вывод первого анкора: ', document.anchors[0].innerHTML, '<br>')
 document.write('Кол-во картинок: ', document.images.length,'<br>');
 document.write('Ширина первой картинки: ', document.images[0].width,'<br>');
 document.write('Ширина самой широкой картинки: ', Math.max.apply(Math, Array.from(document.images).map(function(o) { return o.width; })), '<br>');
