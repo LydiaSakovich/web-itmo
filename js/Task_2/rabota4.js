@@ -1,6 +1,3 @@
-function next() {
-	document.write('<br>-----<br>');;
-}
 //функция рандомизации чисел из инета
 function randomInt(min, max) {
 	let rand = min - 0.5 + Math.random() * (max - min + 1);
