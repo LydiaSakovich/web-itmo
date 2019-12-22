@@ -1,6 +1,6 @@
 //функция рандомизации чисел из инета
 function randomInt(min, max) {
-	let rand = min - 0.5 + Math.random() * (max - min + 1);
+	let rand = Math.random() * (max - min) + min;
 	return Math.round(rand);
 }
 //функция рандомизации цвета из инета
